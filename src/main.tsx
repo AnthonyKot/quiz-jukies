@@ -7,6 +7,8 @@ import LandingPage from './pages/LandingPage';
 import PlaybookPage from './pages/PlaybookPage';
 import HostDashboardPage from './pages/HostDashboardPage';
 import HostLobbyPage from './pages/HostLobbyPage';
+import JoinPage from './pages/JoinPage';
+import PlayerLobbyPage from './pages/PlayerLobbyPage';
 import SoloStartPage from './pages/solo/SoloStartPage';
 import SoloPlayPage from './pages/solo/SoloPlayPage';
 import SoloResultsPage from './pages/solo/SoloResultsPage';
@@ -17,6 +19,22 @@ const router = createBrowserRouter([
     element: (
       <AppShell>
         <LandingPage />
+      </AppShell>
+    ),
+  },
+  {
+    path: '/join',
+    element: (
+      <AppShell>
+        <JoinPage />
+      </AppShell>
+    ),
+  },
+  {
+    path: '/play/:sessionId',
+    element: (
+      <AppShell>
+        <PlayerLobbyPage />
       </AppShell>
     ),
   },

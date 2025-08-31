@@ -13,6 +13,8 @@ import { LobbyPlayer } from '../types/models';
 import ProgressBar from '../ui/ProgressBar';
 import ResultsSummary from '../ui/ResultsSummary';
 import AnswerCard from '../ui/AnswerCard';
+import JoinForm from '../ui/JoinForm';
+import WaitingRoom from '../ui/WaitingRoom';
 
 const Section: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
   <section className="mb-8">
@@ -56,6 +58,15 @@ const PlaybookPage: React.FC = () => {
               <HostControls phase="lobby" onStart={() => {}} onEnd={() => {}} />
             </BottomBar>
           </div>
+        </div>
+      </Section>
+
+      <Section title="Phase 4 — Join flow components">
+        <div className="max-w-sm mx-auto">
+          <JoinForm onJoin={(pin, nick) => alert(`Joining ${pin} as ${nick}`)} />
+        </div>
+        <div className="mt-8">
+          <WaitingRoom pin="123456" nickname="StreamberryFan" />
         </div>
       </Section>
 
